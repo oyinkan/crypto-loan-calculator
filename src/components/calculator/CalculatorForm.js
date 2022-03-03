@@ -9,9 +9,9 @@ export default function CalculatorForm() {
   const [totalPayable, setTotalPayable] = useState(0);
 
   const calculateDailyInterest = () => {
-    const dailyInterest = amount * (0.875/365);
+    const dailyInterest = amount * (0.0875/365);
     setDailyInterest(dailyInterest.toFixed(6));
-    const totalPayable = Number(dailyInterest) * 365 * Number(period);
+    const totalPayable = Number(amount) + (Number(dailyInterest) * 365 * Number(period));
     setTotalPayable(totalPayable.toFixed(6));
   }
 
